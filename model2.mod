@@ -4,8 +4,10 @@ set K1;
 set K2;
 set E1;
 set E2;
-set W1;
-set W2;
+set W1_in;
+set W2_in;
+set W1_out;
+set W2_out;
 set K;
 set E;
 
@@ -33,8 +35,10 @@ four:
 five{j in T}:
 	sum{i in W}(X[i,j]) <= p[j];
 six:
-	sum{i in W}(sum{j in W1}(X[i,j])) <= 38;
+	sum{i in W}(sum{j in W1_in}(X[i,j])) <= 38;
 seven:
-	sum{i in W}(sum{j in W2}(X[i,j])) <= 47;
-eight:
-	sum{i in W}(sum{j in K}(i*X[i,j])) = sum{i in W}(sum{j in E}(i*X[i,j]));
+	sum{i in W}(sum{j in W2_in}(X[i,j])) <= 47;
+eight{i in W}:
+	sum{j in W1_in}(i*X[i,j]) = sum{j in W1_out}(i*X[i,j]);
+nine{i in W}:
+	sum{j in W2_in}(i*X[i,j]) = sum{j in W2_out}(i*X[i,j]);
