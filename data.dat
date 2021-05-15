@@ -4,6 +4,8 @@ set K1 := j1 j2;
 set K2 := j3 j4;
 set E1 := j5 j7;
 set E2 := j6 j8;
+set W1 := j1 j3;
+set W2 := j2 j4;
 set K := j1 j2 j3 j4;
 set E := j5 j6 j7 j8;
 

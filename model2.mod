@@ -4,6 +4,8 @@ set K1;
 set K2;
 set E1;
 set E2;
+set W1;
+set W2;
 set K;
 set E;
 
@@ -31,8 +33,8 @@ four:
 five{j in T}:
 	sum{i in W}(X[i,j]) <= p[j];
 six:
-	sum{i in W}(X[i,'j1']+X[i,'j3']) <= 38;
+	sum{i in W}(sum{j in W1}(X[i,j])) <= 38;
 seven:
-	sum{i in W}(X[i,'j2']+X[i,'j4']) <= 47;
+	sum{i in W}(sum{j in W2}(X[i,j])) <= 47;
 eight:
 	sum{i in W}(sum{j in K}(i*X[i,j])) = sum{i in W}(sum{j in E}(i*X[i,j]));
