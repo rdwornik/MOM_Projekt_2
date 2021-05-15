@@ -1,0 +1,5 @@
+reset;
+model MOM_model2.mod;
+data MOM_data.dat;
+option solver cplex;
+solve;
